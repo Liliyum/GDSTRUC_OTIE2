@@ -1,0 +1,157 @@
+<mxfile>
+  <diagram id="SpiralScanDiagram" name="SpiralScan Flowchart">
+    <mxGraphModel dx="1357" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Start -->
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Input -->
+        <mxCell id="input" value="Input: array[], key" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="140" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Mid index calc -->
+        <mxCell id="mid" value="mid = length/2" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="240" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Check middle -->
+        <mxCell id="checkMid" value="Does array[mid] == key?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="340" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Return mid -->
+        <mxCell id="returnMid" value="Return mid" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="140" y="450" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Step = 1 -->
+        <mxCell id="step" value="step = 1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="450" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Outer loop -->
+        <mxCell id="loop" value="Within array bounds?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="550" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Left check -->
+        <mxCell id="leftCheck" value="Check left: mid - step" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="670" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Left decision -->
+        <mxCell id="leftDecision" value="Left match?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="760" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Left return -->
+        <mxCell id="leftReturn" value="Return leftIndex" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="90" y="870" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Right check -->
+        <mxCell id="rightCheck" value="Check right: mid + step" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="670" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Right decision -->
+        <mxCell id="rightDecision" value="Right match?" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="760" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Right return -->
+        <mxCell id="rightReturn" value="Return rightIndex" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="510" y="870" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Step++ -->
+        <mxCell id="stepInc" value="step = step + 1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="960" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Not found -->
+        <mxCell id="notFound" value="Return -1 (Not Found)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="1070" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- End -->
+        <mxCell id="end" value="End" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1170" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="edge1" edge="1" parent="1" source="start" target="input">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="input" target="mid">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="mid" target="checkMid">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Middle match -->
+        <mxCell id="edge4" edge="1" parent="1" source="checkMid" target="returnMid">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="390" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- No middle match -->
+        <mxCell id="edge5" edge="1" parent="1" source="checkMid" target="step">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge6" edge="1" parent="1" source="step" target="loop">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Loop: Yes -->
+        <mxCell id="edge7" edge="1" parent="1" source="loop" target="leftCheck">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="630" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="edge8" edge="1" parent="1" source="loop" target="rightCheck">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="630" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Left flow -->
+        <mxCell id="edge9" edge="1" parent="1" source="leftCheck" target="leftDecision"/>
+        <mxCell id="edge10" edge="1" parent="1" source="leftDecision" target="leftReturn"/>
+        <mxCell id="edge11" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Right flow -->
+        <mxCell id="edge12" edge="1" parent="1" source="rightCheck" target="rightDecision"/>
+        <mxCell id="edge13" edge="1" parent="1" source="rightDecision" target="rightReturn"/>
+
+        <!-- Loop back -->
+        <mxCell id="edge14" edge="1" parent="1" source="rightDecision" target="stepInc"/>
+        <mxCell id="edge15" edge="1" parent="1" source="leftDecision" target="stepInc"/>
+
+        <mxCell id="edge16" edge="1" parent="1" source="stepInc" target="loop"/>
+
+        <!-- Loop No -->
+        <mxCell id="edge17" edge="1" parent="1" source="loop" target="notFound">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="1000" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="edge18" edge="1" parent="1" source="notFound" target="end"/>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
